@@ -30,7 +30,7 @@ const useEvents = ({ topic }: UseEventsQuery) => {
     return () => {
       commentsContract.contract.off(EventType.CommentAdded, handler);
     };
-  }, [queryClient, commentsContract.chainId, topic]);
+  }, [queryClient, commentsContract.chainId, commentsContract.contract, topic]);
 };
 
 export default useEvents;

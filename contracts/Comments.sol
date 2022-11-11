@@ -14,11 +14,15 @@ contract Comments {
 
     uint32 private idCounter;
     mapping(string => Comment[]) private commentsByTopic;
-        
+
     event CommentAdded(Comment comment);
 
-    function getComments(string calldata topic) public view returns(Comment[] memory) {
-       return commentsByTopic[topic];
+    function getComments(string calldata topic)
+        public
+        view
+        returns (Comment[] memory)
+    {
+        return commentsByTopic[topic];
     }
 
     function addComment(string calldata topic, string calldata message) public {
